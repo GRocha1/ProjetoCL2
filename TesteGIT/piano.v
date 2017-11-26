@@ -140,6 +140,7 @@ module piano( CLOCK_27, KEY, SW, I2C_SDAT, I2C_SCLK, AUD_ADCDAT, AUD_DACLRCK, AU
 					#82 Notas <= 8'b00100000; // LA
 					#84 Notas <= 8'b00010000; // SOL
 			end
+			
 			if(SW[15]) begin // SW15 = Jingle Bells
 				// line 1:
 					#2  Notas <= 8'b01000000; // SI
@@ -231,63 +232,62 @@ module piano( CLOCK_27, KEY, SW, I2C_SDAT, I2C_SCLK, AUD_ADCDAT, AUD_DACLRCK, AU
 		end
 		else
 			if(SW[7:0])
-				Octave <= SW[7:0];
 				Octave <= Notas;
+			else
+				Octave <= SW[7:0];
 	end
 	
 	always @(posedge AUD_BCLK or negedge Reset) begin
 		if(!Reset)
 			count12 <= 12'h000;
-		else begin
-			if( SW[17]) begin
-				if(Octave == 8'b00000001) begin
-					if(count12 == DO)
-						count12 <= 12'h00;
-					else
-						count12 <= count12 + 1;
-				end
-				if(Octave == 8'b00000010) begin
-					if( count12 == RE)
-						count12 <= 12'h00;
-					else
-						count12 <= count12 + 1;
-				end
-				if(Octave == 8'b00000100) begin
-					if( count12 == MI)
-						count12 <= 12'h00;
-					else
-						count12 <= count12 + 1;
-				end
-				if(Octave == 8'b00001000) begin
-					if( count12 == FA)
-						count12 <= 12'h00;
-					else
-						count12 <= count12 + 1;
-				end
-				if(Octave == 8'b00010000) begin
-					if( count12 == SOL)
-						count12 <= 12'h00;
-					else
-						count12 <= count12 + 1;
-				end
-				if(Octave == 8'b00100000) begin
-					if( count12 == LA)
-						count12 <= 12'h00;
-					else
-						count12 <= count12 + 1;
-				end
-				if(Octave == 8'b01000000) begin
-					if( count12 == SI)
-						count12 <= 12'h00;
-					else
-						count12 <= count12 + 1;
-				end
-				if(Octave == 8'b10000000) begin
-					if( count12 == DO1)
-						count12 <= 12'h00;
-					else
-						count12 <= count12 + 1;
-				end
+		else begin // Ah eu tirei o if daqui  e coloquei ele pra linha 233 junto com um else.
+			if(Octave == 8'b00000001) begin
+				if(count12 == DO)
+					count12 <= 12'h00;
+				else
+					count12 <= count12 + 1;
+			end
+			if(Octave == 8'b00000010) begin
+				if( count12 == RE)
+					count12 <= 12'h00;
+				else
+					count12 <= count12 + 1;
+			end
+			if(Octave == 8'b00000100) begin
+				if( count12 == MI)
+					count12 <= 12'h00;
+				else
+					count12 <= count12 + 1;
+			end
+			if(Octave == 8'b00001000) begin
+				if( count12 == FA)
+					count12 <= 12'h00;
+				else
+					count12 <= count12 + 1;
+			end
+			if(Octave == 8'b00010000) begin
+				if( count12 == SOL)
+					count12 <= 12'h00;
+				else
+					count12 <= count12 + 1;
+			end
+			if(Octave == 8'b00100000) begin
+				if( count12 == LA)
+					count12 <= 12'h00;
+				else
+					count12 <= count12 + 1;
+			end
+			if(Octave == 8'b01000000) begin
+				if( count12 == SI)
+					count12 <= 12'h00;
+				else
+					count12 <= count12 + 1;
+			end
+			if(Octave == 8'b10000000) begin
+				if( count12 == DO1)
+					count12 <= 12'h00;
+				else
+					count12 <= count12 + 1;
 			end
 		end
 	end

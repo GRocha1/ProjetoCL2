@@ -2,33 +2,33 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow Model Setup 'AUD_BCLK~reg0'
-Slack : -4.441
-TNS   : -60.901
-
 Type  : Slow Model Setup 'CLOCK_27'
-Slack : -2.607
-TNS   : -85.083
+Slack : -2.592
+TNS   : -82.712
+
+Type  : Slow Model Setup 'AUD_BCLK~reg0'
+Slack : -2.564
+TNS   : -25.653
 
 Type  : Slow Model Setup 'i2c_codec_control:u1|mI2C_CTRL_CLK'
-Slack : -2.216
-TNS   : -24.198
+Slack : -1.987
+TNS   : -28.045
 
 Type  : Slow Model Setup 'AUD_XCK~reg0'
-Slack : -1.528
-TNS   : -14.967
+Slack : -1.534
+TNS   : -14.786
 
 Type  : Slow Model Setup 'KEY[3]'
-Slack : 0.226
+Slack : 0.233
 TNS   : 0.000
 
 Type  : Slow Model Hold 'AUD_XCK~reg0'
-Slack : -3.050
-TNS   : -3.050
+Slack : -2.827
+TNS   : -2.827
 
 Type  : Slow Model Hold 'CLOCK_27'
-Slack : -2.508
-TNS   : -5.015
+Slack : -2.493
+TNS   : -4.963
 
 Type  : Slow Model Hold 'AUD_BCLK~reg0'
 Slack : 0.391
@@ -43,35 +43,35 @@ Slack : 0.391
 TNS   : 0.000
 
 Type  : Slow Model Recovery 'KEY[3]'
-Slack : -0.965
-TNS   : -1.930
+Slack : -0.895
+TNS   : -1.790
 
 Type  : Slow Model Recovery 'AUD_BCLK~reg0'
-Slack : -0.654
-TNS   : -10.927
-
-Type  : Slow Model Recovery 'CLOCK_27'
-Slack : -0.269
-TNS   : -0.269
+Slack : -0.825
+TNS   : -13.029
 
 Type  : Slow Model Recovery 'AUD_XCK~reg0'
-Slack : 0.068
-TNS   : 0.000
+Slack : -0.382
+TNS   : -4.570
+
+Type  : Slow Model Recovery 'CLOCK_27'
+Slack : -0.266
+TNS   : -0.266
 
 Type  : Slow Model Removal 'AUD_XCK~reg0'
-Slack : 0.688
-TNS   : 0.000
-
-Type  : Slow Model Removal 'AUD_BCLK~reg0'
-Slack : 0.919
+Slack : 0.862
 TNS   : 0.000
 
 Type  : Slow Model Removal 'CLOCK_27'
-Slack : 1.039
+Slack : 1.036
+TNS   : 0.000
+
+Type  : Slow Model Removal 'AUD_BCLK~reg0'
+Slack : 1.373
 TNS   : 0.000
 
 Type  : Slow Model Removal 'KEY[3]'
-Slack : 1.735
+Slack : 1.665
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'CLOCK_27'
@@ -84,7 +84,7 @@ TNS   : -3.222
 
 Type  : Slow Model Minimum Pulse Width 'AUD_BCLK~reg0'
 Slack : -0.500
-TNS   : -27.000
+TNS   : -19.000
 
 Type  : Slow Model Minimum Pulse Width 'i2c_codec_control:u1|mI2C_CTRL_CLK'
 Slack : -0.500
@@ -92,35 +92,35 @@ TNS   : -19.000
 
 Type  : Slow Model Minimum Pulse Width 'AUD_XCK~reg0'
 Slack : -0.500
-TNS   : -14.000
+TNS   : -15.000
 
 Type  : Fast Model Setup 'AUD_BCLK~reg0'
-Slack : -1.753
-TNS   : -23.906
+Slack : -0.841
+TNS   : -5.163
 
 Type  : Fast Model Setup 'CLOCK_27'
-Slack : -0.710
-TNS   : -20.189
+Slack : -0.702
+TNS   : -18.886
 
 Type  : Fast Model Setup 'i2c_codec_control:u1|mI2C_CTRL_CLK'
-Slack : -0.700
-TNS   : -4.317
+Slack : -0.641
+TNS   : -5.696
 
 Type  : Fast Model Setup 'AUD_XCK~reg0'
-Slack : -0.178
-TNS   : -1.602
+Slack : -0.185
+TNS   : -1.665
 
 Type  : Fast Model Setup 'KEY[3]'
-Slack : 0.628
+Slack : 0.631
 TNS   : 0.000
 
 Type  : Fast Model Hold 'AUD_XCK~reg0'
-Slack : -1.794
-TNS   : -1.794
+Slack : -1.642
+TNS   : -1.642
 
 Type  : Fast Model Hold 'CLOCK_27'
-Slack : -1.555
-TNS   : -3.106
+Slack : -1.540
+TNS   : -3.059
 
 Type  : Fast Model Hold 'AUD_BCLK~reg0'
 Slack : 0.215
@@ -134,36 +134,36 @@ Type  : Fast Model Hold 'i2c_codec_control:u1|mI2C_CTRL_CLK'
 Slack : 0.215
 TNS   : 0.000
 
-Type  : Fast Model Recovery 'KEY[3]'
-Slack : -0.305
-TNS   : -0.610
-
 Type  : Fast Model Recovery 'AUD_BCLK~reg0'
-Slack : -0.157
-TNS   : -2.029
+Slack : -0.278
+TNS   : -1.946
 
-Type  : Fast Model Recovery 'CLOCK_27'
-Slack : 0.296
-TNS   : 0.000
+Type  : Fast Model Recovery 'KEY[3]'
+Slack : -0.272
+TNS   : -0.544
 
 Type  : Fast Model Recovery 'AUD_XCK~reg0'
-Slack : 0.444
+Slack : 0.192
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'CLOCK_27'
+Slack : 0.297
 TNS   : 0.000
 
 Type  : Fast Model Removal 'AUD_XCK~reg0'
-Slack : 0.429
-TNS   : 0.000
-
-Type  : Fast Model Removal 'AUD_BCLK~reg0'
-Slack : 0.535
+Slack : 0.561
 TNS   : 0.000
 
 Type  : Fast Model Removal 'CLOCK_27'
-Slack : 0.584
+Slack : 0.583
+TNS   : 0.000
+
+Type  : Fast Model Removal 'AUD_BCLK~reg0'
+Slack : 0.778
 TNS   : 0.000
 
 Type  : Fast Model Removal 'KEY[3]'
-Slack : 1.185
+Slack : 1.152
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'CLOCK_27'
@@ -176,7 +176,7 @@ TNS   : -3.222
 
 Type  : Fast Model Minimum Pulse Width 'AUD_BCLK~reg0'
 Slack : -0.500
-TNS   : -27.000
+TNS   : -19.000
 
 Type  : Fast Model Minimum Pulse Width 'i2c_codec_control:u1|mI2C_CTRL_CLK'
 Slack : -0.500
@@ -184,6 +184,6 @@ TNS   : -19.000
 
 Type  : Fast Model Minimum Pulse Width 'AUD_XCK~reg0'
 Slack : -0.500
-TNS   : -14.000
+TNS   : -15.000
 
 ------------------------------------------------------------

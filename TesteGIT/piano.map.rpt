@@ -1,6 +1,6 @@
 Analysis & Synthesis report for piano
-Mon Nov 27 13:50:33 2017
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Fri Dec 01 09:00:53 2017
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
 ---------------------
@@ -15,22 +15,20 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |piano|i2c_codec_control:u1|mSetup_ST
   9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Parameter Settings for User Entity Instance: Top-level Entity: |piano
- 15. Parameter Settings for User Entity Instance: i2c_codec_control:u1
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
- 18. Analysis & Synthesis Suppressed Messages
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: Top-level Entity: |piano
+ 14. Parameter Settings for User Entity Instance: i2c_codec_control:u1
+ 15. Analysis & Synthesis Messages
+ 16. Analysis & Synthesis Suppressed Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2013 Altera Corporation
+Copyright (C) 1991-2010 Altera Corporation
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -46,24 +44,24 @@ applicable agreement for further details.
 
 
 
-+--------------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                         ;
-+------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Nov 27 13:50:33 2017           ;
-; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
-; Revision Name                      ; piano                                           ;
-; Top-level Entity Name              ; piano                                           ;
-; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 378                                             ;
-;     Total combinational functions  ; 376                                             ;
-;     Dedicated logic registers      ; 101                                             ;
-; Total registers                    ; 101                                             ;
-; Total pins                         ; 48                                              ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total PLLs                         ; 0                                               ;
-+------------------------------------+-------------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++------------------------------------+----------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Dec 01 09:00:53 2017        ;
+; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
+; Revision Name                      ; piano                                        ;
+; Top-level Entity Name              ; piano                                        ;
+; Family                             ; Cyclone II                                   ;
+; Total logic elements               ; 810                                          ;
+;     Total combinational functions  ; 808                                          ;
+;     Dedicated logic registers      ; 235                                          ;
+; Total registers                    ; 235                                          ;
+; Total pins                         ; 69                                           ;
+; Total virtual pins                 ; 0                                            ;
+; Total memory bits                  ; 0                                            ;
+; Embedded Multiplier 9-bit elements ; 0                                            ;
+; Total PLLs                         ; 0                                            ;
++------------------------------------+----------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -74,6 +72,8 @@ applicable agreement for further details.
 ; Device                                                                     ; EP2C35F672C6       ;                    ;
 ; Top-level entity name                                                      ; piano              ; piano              ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use Generated Physical Constraints File                                    ; Off                ;                    ;
+; Synchronization Register Chain Length                                      ; 2                  ; 3                  ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
@@ -91,7 +91,6 @@ applicable agreement for further details.
 ; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
 ; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
 ; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
-; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
 ; Parallel Synthesis                                                         ; On                 ; On                 ;
 ; DSP Block Balancing                                                        ; Auto               ; Auto               ;
 ; NOT Gate Push-Back                                                         ; On                 ; On                 ;
@@ -113,7 +112,6 @@ applicable agreement for further details.
 ; Auto ROM Replacement                                                       ; On                 ; On                 ;
 ; Auto RAM Replacement                                                       ; On                 ; On                 ;
 ; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
-; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
 ; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
 ; Strict RAM Replacement                                                     ; Off                ; Off                ;
 ; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
@@ -126,16 +124,12 @@ applicable agreement for further details.
 ; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
 ; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
 ; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
-; Report Parameter Settings                                                  ; On                 ; On                 ;
-; Report Source Assignments                                                  ; On                 ; On                 ;
-; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Show Parameter Settings Tables in Synthesis Report                         ; On                 ; On                 ;
 ; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
-; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
 ; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
 ; HDL message level                                                          ; Level2             ; Level2             ;
 ; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
 ; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
-; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
 ; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
 ; Clock MUX Protection                                                       ; On                 ; On                 ;
 ; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
@@ -143,11 +137,9 @@ applicable agreement for further details.
 ; SDC constraint protection                                                  ; Off                ; Off                ;
 ; Synthesis Effort                                                           ; Auto               ; Auto               ;
 ; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
-; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
 ; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
 ; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
 ; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
-; Synthesis Seed                                                             ; 1                  ; 1                  ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
@@ -162,44 +154,43 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                              ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                                                ; Library ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------------------------------------------+---------+
-; piano.v                          ; yes             ; User Verilog HDL File  ; C:/Users/guga_/Documents/Estudos/UFPB/Engenharia de Computação/P2/Circuitos Lógicos II/Projeto/TesteGIT/piano.v             ;         ;
-; i2c_codec_control.v              ; yes             ; User Verilog HDL File  ; C:/Users/guga_/Documents/Estudos/UFPB/Engenharia de Computação/P2/Circuitos Lógicos II/Projeto/TesteGIT/i2c_codec_control.v ;         ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                   ;
++----------------------------------+-----------------+------------------------+--------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path               ;
++----------------------------------+-----------------+------------------------+--------------------------------------------+
+; piano.v                          ; yes             ; User Verilog HDL File  ; E:/ProjetoCL2/TesteGIT/piano.v             ;
+; i2c_codec_control.v              ; yes             ; User Verilog HDL File  ; E:/ProjetoCL2/TesteGIT/i2c_codec_control.v ;
++----------------------------------+-----------------+------------------------+--------------------------------------------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimated Total logic elements              ; 378   ;
-;                                             ;       ;
-; Total combinational functions               ; 376   ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 137   ;
-;     -- 3 input functions                    ; 70    ;
-;     -- <=2 input functions                  ; 169   ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 242   ;
-;     -- arithmetic mode                      ; 134   ;
-;                                             ;       ;
-; Total registers                             ; 101   ;
-;     -- Dedicated logic registers            ; 101   ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 48    ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-; Maximum fan-out node                        ; Reset ;
-; Maximum fan-out                             ; 44    ;
-; Total fan-out                               ; 1445  ;
-; Average fan-out                             ; 2.75  ;
-+---------------------------------------------+-------+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 810      ;
+;                                             ;          ;
+; Total combinational functions               ; 808      ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 366      ;
+;     -- 3 input functions                    ; 190      ;
+;     -- <=2 input functions                  ; 252      ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 559      ;
+;     -- arithmetic mode                      ; 249      ;
+;                                             ;          ;
+; Total registers                             ; 235      ;
+;     -- Dedicated logic registers            ; 235      ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 69       ;
+; Maximum fan-out node                        ; CLOCK_27 ;
+; Maximum fan-out                             ; 173      ;
+; Total fan-out                               ; 3304     ;
+; Average fan-out                             ; 2.97     ;
++---------------------------------------------+----------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -207,8 +198,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name         ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+--------------+
-; |piano                     ; 376 (318)         ; 101 (65)     ; 0           ; 0            ; 0       ; 0         ; 48   ; 0            ; |piano                      ; work         ;
-;    |i2c_codec_control:u1|  ; 58 (58)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |piano|i2c_codec_control:u1 ; work         ;
+; |piano                     ; 808 (750)         ; 235 (199)    ; 0           ; 0            ; 0       ; 0         ; 69   ; 0            ; |piano                      ; work         ;
+;    |i2c_codec_control:u1|  ; 58 (58)           ; 36 (36)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |piano|i2c_codec_control:u1 ;              ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -225,42 +216,29 @@ Encoding Type:  One-Hot
 +---------------+---------------+---------------+---------------+
 
 
-+----------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                               ;
-+-----------------------------------------+----------------------------------------+
-; Register name                           ; Reason for Removal                     ;
-+-----------------------------------------+----------------------------------------+
-; SOUND1[0..2]                            ; Stuck at GND due to stuck port data_in ;
-; SOUND2[0..6]                            ; Stuck at GND due to stuck port data_in ;
-; SOUND3[0..2]                            ; Stuck at GND due to stuck port data_in ;
-; contador[4..29]                         ; Stuck at GND due to stuck port data_in ;
-; Notas[0..7]                             ; Stuck at GND due to stuck port data_in ;
-; newcont[0..29]                          ; Lost fanout                            ;
-; contador1[0..29]                        ; Lost fanout                            ;
-; contador[0..3]                          ; Lost fanout                            ;
-; SOUND3[3]                               ; Merged with SOUND2[7]                  ;
-; SOUND2[7]                               ; Merged with SOUND1[3]                  ;
-; SOUND1[6,8,12..14]                      ; Merged with SOUND1[15]                 ;
-; SOUND2[9..13,15]                        ; Merged with SOUND1[15]                 ;
-; SOUND3[4,5,7..9,11,15]                  ; Merged with SOUND1[15]                 ;
-; SOUND1[4,5,7,9,10]                      ; Merged with SOUND1[11]                 ;
-; SOUND2[8,14]                            ; Merged with SOUND1[11]                 ;
-; SOUND3[6,10,12..14]                     ; Merged with SOUND1[11]                 ;
-; SING                                    ; Merged with SOUND1[11]                 ;
-; i2c_codec_control:u1|mSetup_ST~9        ; Lost fanout                            ;
-; BCK_DIV[3]                              ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 146 ;                                        ;
-+-----------------------------------------+----------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                         ;
-+---------------+---------------------------+-----------------------------------------------------------------------------------------+
-; Register name ; Reason for Removal        ; Registers Removed due to This Register                                                  ;
-+---------------+---------------------------+-----------------------------------------------------------------------------------------+
-; contador[4]   ; Stuck at GND              ; contador1[8], contador1[9], contador1[13], contador1[18], contador1[20], contador1[21], ;
-;               ; due to stuck port data_in ; contador1[22], contador1[23]                                                            ;
-+---------------+---------------------------+-----------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; SOUND1[0..2]                           ; Stuck at GND due to stuck port data_in ;
+; SOUND2[0..6]                           ; Stuck at GND due to stuck port data_in ;
+; SOUND3[0..2]                           ; Stuck at GND due to stuck port data_in ;
+; SOUND3[3]                              ; Merged with SOUND2[7]                  ;
+; SOUND2[7]                              ; Merged with SOUND1[3]                  ;
+; SOUND1[6,8,12..14]                     ; Merged with SOUND1[15]                 ;
+; SOUND2[9..13,15]                       ; Merged with SOUND1[15]                 ;
+; SOUND3[4..5,7..9,11,15]                ; Merged with SOUND1[15]                 ;
+; SOUND1[4..5,7,9..10]                   ; Merged with SOUND1[11]                 ;
+; SOUND2[8,14]                           ; Merged with SOUND1[11]                 ;
+; SOUND3[6,10,12..14]                    ; Merged with SOUND1[11]                 ;
+; SING                                   ; Merged with SOUND1[11]                 ;
+; contador[7..29]                        ; Merged with contador[6]                ;
+; contador[6]                            ; Stuck at GND due to stuck port data_in ;
+; i2c_codec_control:u1|mSetup_ST~9       ; Lost fanout                            ;
+; BCK_DIV[3]                             ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 72 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -268,12 +246,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 101   ;
-; Number of registers using Synchronous Clear  ; 25    ;
-; Number of registers using Synchronous Load   ; 6     ;
+; Total registers                              ; 235   ;
+; Number of registers using Synchronous Clear  ; 57    ;
+; Number of registers using Synchronous Load   ; 10    ;
 ; Number of registers using Asynchronous Clear ; 80    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 32    ;
+; Number of registers using Clock Enable       ; 143   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -295,21 +273,25 @@ Encoding Type:  One-Hot
 +----------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |piano|count12[6]                       ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |piano|i2c_codec_control:u1|SD_COUNT[3] ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |piano|count12                          ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |piano|count12                          ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |piano|count12                          ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |piano|count12                          ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |piano|count12                          ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |piano|count12                          ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |piano|count12                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |piano|count12[9]          ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |piano|Notas[0]            ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |piano|contador1[4]        ;
+; 62:1               ; 30 bits   ; 1230 LEs      ; 30 LEs               ; 1200 LEs               ; Yes        ; |piano|newCont[13]         ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |piano|count12             ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |piano|count12             ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |piano|count12             ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |piano|count12             ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |piano|count12             ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |piano|count12             ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |piano|count12             ;
+; 3:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; No         ; |piano|contador1           ;
+; 3:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; No         ; |piano|Add4                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
 +-----------------------------------------------------------------------+
@@ -331,7 +313,7 @@ Encoding Type:  One-Hot
 ; SI              ; 760      ; Signed Integer                           ;
 ; DO1             ; 725      ; Signed Integer                           ;
 +-----------------+----------+------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------------------------------------------+
@@ -343,78 +325,162 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; I2C_Freq       ; 20000    ; Signed Integer                        ;
 ; LUT_SIZE       ; 11       ; Signed Integer                        ;
 +----------------+----------+---------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:01     ;
-+----------------+--------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Nov 27 13:50:30 2017
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Fri Dec 01 09:00:43 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off piano -c piano
-Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 1 design units, including 1 entities, in source file piano.v
-    Info (12023): Found entity 1: piano
-Info (12021): Found 1 design units, including 1 entities, in source file i2c_codec_control.v
-    Info (12023): Found entity 1: i2c_codec_control
-Info (12127): Elaborating entity "piano" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at piano.v(67): truncated value with size 32 to match size of target (20)
-Warning (10230): Verilog HDL assignment warning at piano.v(86): truncated value with size 32 to match size of target (4)
-Warning (10230): Verilog HDL assignment warning at piano.v(101): truncated value with size 32 to match size of target (9)
-Warning (10230): Verilog HDL assignment warning at piano.v(130): truncated value with size 32 to match size of target (30)
-Warning (10230): Verilog HDL assignment warning at piano.v(136): truncated value with size 32 to match size of target (30)
-Warning (10230): Verilog HDL assignment warning at piano.v(141): truncated value with size 32 to match size of target (30)
-Warning (10230): Verilog HDL assignment warning at piano.v(146): truncated value with size 32 to match size of target (30)
-Warning (10230): Verilog HDL assignment warning at piano.v(151): truncated value with size 32 to match size of target (30)
-Warning (10230): Verilog HDL assignment warning at piano.v(156): truncated value with size 32 to match size of target (30)
-Warning (10230): Verilog HDL assignment warning at piano.v(161): truncated value with size 32 to match size of target (30)
+Info: Found 1 design units, including 1 entities, in source file piano.v
+    Info: Found entity 1: piano
+Info: Found 1 design units, including 1 entities, in source file i2c_codec_control.v
+    Info: Found entity 1: i2c_codec_control
+Info: Elaborating entity "piano" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at piano.v(68): truncated value with size 32 to match size of target (20)
+Warning (10230): Verilog HDL assignment warning at piano.v(109): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at piano.v(124): truncated value with size 32 to match size of target (9)
+Warning (10230): Verilog HDL assignment warning at piano.v(154): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(159): truncated value with size 32 to match size of target (30)
 Warning (10230): Verilog HDL assignment warning at piano.v(166): truncated value with size 32 to match size of target (30)
 Warning (10230): Verilog HDL assignment warning at piano.v(171): truncated value with size 32 to match size of target (30)
 Warning (10230): Verilog HDL assignment warning at piano.v(176): truncated value with size 32 to match size of target (30)
 Warning (10230): Verilog HDL assignment warning at piano.v(181): truncated value with size 32 to match size of target (30)
-Warning (10230): Verilog HDL assignment warning at piano.v(186): truncated value with size 32 to match size of target (30)
-Warning (10230): Verilog HDL assignment warning at piano.v(191): truncated value with size 32 to match size of target (30)
-Warning (10230): Verilog HDL assignment warning at piano.v(197): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(187): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(192): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(200): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(205): truncated value with size 32 to match size of target (30)
 Warning (10230): Verilog HDL assignment warning at piano.v(212): truncated value with size 32 to match size of target (30)
-Warning (10230): Verilog HDL assignment warning at piano.v(223): truncated value with size 32 to match size of target (12)
-Warning (10230): Verilog HDL assignment warning at piano.v(229): truncated value with size 32 to match size of target (12)
-Warning (10230): Verilog HDL assignment warning at piano.v(235): truncated value with size 32 to match size of target (12)
-Warning (10230): Verilog HDL assignment warning at piano.v(241): truncated value with size 32 to match size of target (12)
-Warning (10230): Verilog HDL assignment warning at piano.v(247): truncated value with size 32 to match size of target (12)
-Warning (10230): Verilog HDL assignment warning at piano.v(253): truncated value with size 32 to match size of target (12)
-Warning (10230): Verilog HDL assignment warning at piano.v(259): truncated value with size 32 to match size of target (12)
-Warning (10230): Verilog HDL assignment warning at piano.v(265): truncated value with size 32 to match size of target (12)
-Warning (10230): Verilog HDL assignment warning at piano.v(281): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at piano.v(282): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at piano.v(283): truncated value with size 32 to match size of target (16)
-Warning (10230): Verilog HDL assignment warning at piano.v(293): truncated value with size 32 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at piano.v(300): truncated value with size 32 to match size of target (4)
-Info (12128): Elaborating entity "i2c_codec_control" for hierarchy "i2c_codec_control:u1"
+Warning (10230): Verilog HDL assignment warning at piano.v(217): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(222): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(227): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(232): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(237): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(244): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(249): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(256): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(261): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(266): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(272): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(277): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(285): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(290): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(298): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(303): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(310): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(315): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(320): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(326): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(331): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(336): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(347): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(354): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(365): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(374): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(380): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(385): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(392): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(401): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(406): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(411): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(416): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(421): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(427): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(432): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(437): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(446): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(452): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(457): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(466): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(470): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(475): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(480): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(485): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(490): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(496): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(501): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(508): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(513): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(518): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(524): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(529): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(536): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(541): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(546): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(551): truncated value with size 32 to match size of target (30)
+Warning (10272): Verilog HDL Case Statement warning at piano.v(259): case item expression covers a value already covered by a previous case item
+Warning (10272): Verilog HDL Case Statement warning at piano.v(264): case item expression covers a value already covered by a previous case item
+Warning (10272): Verilog HDL Case Statement warning at piano.v(425): case item expression covers a value already covered by a previous case item
+Warning (10230): Verilog HDL assignment warning at piano.v(565): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(571): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(576): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(581): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(586): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(591): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(596): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(601): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(606): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(611): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(616): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(621): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(626): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(632): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(645): truncated value with size 32 to match size of target (30)
+Warning (10230): Verilog HDL assignment warning at piano.v(659): truncated value with size 32 to match size of target (12)
+Warning (10230): Verilog HDL assignment warning at piano.v(665): truncated value with size 32 to match size of target (12)
+Warning (10230): Verilog HDL assignment warning at piano.v(671): truncated value with size 32 to match size of target (12)
+Warning (10230): Verilog HDL assignment warning at piano.v(677): truncated value with size 32 to match size of target (12)
+Warning (10230): Verilog HDL assignment warning at piano.v(683): truncated value with size 32 to match size of target (12)
+Warning (10230): Verilog HDL assignment warning at piano.v(689): truncated value with size 32 to match size of target (12)
+Warning (10230): Verilog HDL assignment warning at piano.v(695): truncated value with size 32 to match size of target (12)
+Warning (10230): Verilog HDL assignment warning at piano.v(701): truncated value with size 32 to match size of target (12)
+Warning (10230): Verilog HDL assignment warning at piano.v(717): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at piano.v(718): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at piano.v(719): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at piano.v(729): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at piano.v(736): truncated value with size 32 to match size of target (4)
+Warning (10034): Output port "HEX1" at piano.v(18) has no driver
+Warning (10034): Output port "HEX2" at piano.v(18) has no driver
+Info: Elaborating entity "i2c_codec_control" for hierarchy "i2c_codec_control:u1"
 Warning (10036): Verilog HDL or VHDL warning at i2c_codec_control.v(16): object "SDO" assigned a value but never read
 Warning (10230): Verilog HDL assignment warning at i2c_codec_control.v(19): truncated value with size 32 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at i2c_codec_control.v(33): truncated value with size 32 to match size of target (16)
 Warning (10230): Verilog HDL assignment warning at i2c_codec_control.v(48): truncated value with size 32 to match size of target (6)
 Warning (10230): Verilog HDL assignment warning at i2c_codec_control.v(145): truncated value with size 32 to match size of target (4)
-Warning (13039): The following bidir pins have no drivers
-    Warning (13040): Bidir "I2C_SDAT" has no driver
-Info (13000): Registers with preset signals will power-up high
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Info (17049): 65 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file C:/Users/guga_/Documents/Estudos/UFPB/Engenharia de Computação/P2/Circuitos Lógicos II/Projeto/TesteGIT/piano.map.smsg
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 13 input pin(s) that do not drive logic
+Warning: The following bidir pins have no drivers
+    Warning: Bidir "I2C_SDAT" has no driver
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX0[0]" is stuck at VCC
+    Warning (13410): Pin "HEX0[1]" is stuck at VCC
+    Warning (13410): Pin "HEX0[2]" is stuck at VCC
+    Warning (13410): Pin "HEX0[3]" is stuck at VCC
+    Warning (13410): Pin "HEX0[4]" is stuck at VCC
+    Warning (13410): Pin "HEX0[5]" is stuck at VCC
+    Warning (13410): Pin "HEX0[6]" is stuck at VCC
+    Warning (13410): Pin "HEX1[0]" is stuck at GND
+    Warning (13410): Pin "HEX1[1]" is stuck at GND
+    Warning (13410): Pin "HEX1[2]" is stuck at GND
+    Warning (13410): Pin "HEX1[3]" is stuck at GND
+    Warning (13410): Pin "HEX1[4]" is stuck at GND
+    Warning (13410): Pin "HEX1[5]" is stuck at GND
+    Warning (13410): Pin "HEX1[6]" is stuck at GND
+    Warning (13410): Pin "HEX2[0]" is stuck at GND
+    Warning (13410): Pin "HEX2[1]" is stuck at GND
+    Warning (13410): Pin "HEX2[2]" is stuck at GND
+    Warning (13410): Pin "HEX2[3]" is stuck at GND
+    Warning (13410): Pin "HEX2[4]" is stuck at GND
+    Warning (13410): Pin "HEX2[5]" is stuck at GND
+    Warning (13410): Pin "HEX2[6]" is stuck at GND
+Info: 1 registers lost all their fanouts during netlist optimizations. The first 1 are displayed below.
+    Info: Register "i2c_codec_control:u1|mSetup_ST~9" lost all its fanouts during netlist optimizations.
+Info: Generated suppressed messages file E:/ProjetoCL2/TesteGIT/piano.map.smsg
+Warning: Design contains 11 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "CLOCK_50"
     Warning (15610): No output dependent on input pin "KEY[1]"
     Warning (15610): No output dependent on input pin "KEY[2]"
@@ -425,24 +491,22 @@ Warning (21074): Design contains 13 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[12]"
     Warning (15610): No output dependent on input pin "SW[13]"
     Warning (15610): No output dependent on input pin "SW[14]"
-    Warning (15610): No output dependent on input pin "SW[15]"
-    Warning (15610): No output dependent on input pin "SW[16]"
     Warning (15610): No output dependent on input pin "AUD_ADCDAT"
-Info (21057): Implemented 426 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 25 input pins
-    Info (21059): Implemented 22 output pins
-    Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 378 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 53 warnings
-    Info: Peak virtual memory: 530 megabytes
-    Info: Processing ended: Mon Nov 27 13:50:33 2017
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:02
+Info: Implemented 883 device resources after synthesis - the final resource count might be different
+    Info: Implemented 25 input pins
+    Info: Implemented 43 output pins
+    Info: Implemented 1 bidirectional pins
+    Info: Implemented 814 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 145 warnings
+    Info: Peak virtual memory: 218 megabytes
+    Info: Processing ended: Fri Dec 01 09:00:54 2017
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:05
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/guga_/Documents/Estudos/UFPB/Engenharia de Computação/P2/Circuitos Lógicos II/Projeto/TesteGIT/piano.map.smsg.
+The suppressed messages can be found in E:/ProjetoCL2/TesteGIT/piano.map.smsg.
 
 

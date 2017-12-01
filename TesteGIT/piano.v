@@ -1,4 +1,4 @@
-module piano(CLOCK_50, CLOCK_27, KEY, SW, I2C_SDAT, I2C_SCLK, AUD_ADCDAT, AUD_DACLRCK, AUD_DACDAT, AUD_BCLK, AUD_ADCLRCK, AUD_XCK, LEDR, LEDG );
+module piano(CLOCK_50, CLOCK_27, KEY, SW, I2C_SDAT, I2C_SCLK, AUD_ADCDAT, AUD_DACLRCK, AUD_DACDAT, AUD_BCLK, AUD_ADCLRCK, AUD_XCK, LEDR, LEDG);
 	
 	// Entradas:
 		input CLOCK_27; // Clock em 27MHz.
@@ -10,7 +10,7 @@ module piano(CLOCK_50, CLOCK_27, KEY, SW, I2C_SDAT, I2C_SCLK, AUD_ADCDAT, AUD_DA
 	// Inouts:
 		inout I2C_SDAT;
 		
-	// Saídas:
+	// Saidas:
 		output I2C_SCLK, AUD_ADCLRCK, AUD_DACLRCK;
 		output AUD_DACDAT;
 		output [7:0] LEDG, LEDR;
@@ -48,7 +48,7 @@ module piano(CLOCK_50, CLOCK_27, KEY, SW, I2C_SDAT, I2C_SCLK, AUD_ADCDAT, AUD_DA
 		reg [3:0] volume;
 		reg [29:0] contador;
 		reg [29:0] contador1;
-		reg [29:0] newcont;
+		reg [29:0] newcont, newCont, newCont2;
 		
 	// Funcao ... :
 		i2c_codec_control u1(CLOCK_27, KEY[0], I2C_SCLK, I2C_SDAT, LEDG[7:4]);
@@ -70,7 +70,8 @@ module piano(CLOCK_50, CLOCK_27, KEY, SW, I2C_SDAT, I2C_SCLK, AUD_ADCDAT, AUD_DA
 			else
 				Reset <= 1;
 		end
-	
+
+					  				  	
 	always @( posedge AUD_XCK or negedge Reset ) begin
 		if(!Reset) begin
 			BCK_DIV <= 4'b0;
@@ -122,8 +123,420 @@ module piano(CLOCK_50, CLOCK_27, KEY, SW, I2C_SDAT, I2C_SCLK, AUD_ADCDAT, AUD_DA
 	
 	always @(posedge CLOCK_27) begin
 		if(contador1 == 30'd15_999_999 ) begin
-			if(SW[15]) begin
-				Notas <= 8'b00000000;
+			if(SW[16]) begin // Jingle Bells
+				case(contador)
+					// Verso 1:
+					0: begin
+					   Notas <= 8'b01000000; // SI
+					   if( newCont < 7) begin
+							newCont <= newCont + 1;
+							#2 Notas <= 8'b00000000;
+							contador = 0;
+					   end
+					   else begin
+							contador = contador + 1;
+							newCont <= 0;
+					   end
+					   contador1 = 30'd0;
+					end
+					1: begin
+					   Notas <= 8'b00000010; // RE
+					   contador = contador + 1;
+					   contador1 = 30'd0;
+					end
+					2: begin
+					   Notas <= 8'b00010000; // SOL
+					   contador = contador + 1;
+					   contador1 = 30'd0;
+					end
+					3: begin
+					   Notas <= 8'b00100000; // LA
+					   contador = contador + 1;
+					   contador1 = 30'd0;
+					end
+					4: begin
+					   Notas <= 8'b01000000; // SI
+					   contador = contador + 1;
+					   contador1 = 30'd0;
+					end
+					5: begin
+					   Notas <= 8'b10000000; // DO1
+					   if(newCont < 3) begin
+						   newCont <= newCont + 1;
+						   #2 Notas <= 8'b00000000;
+						   contador = 5;
+					   end
+					   else begin
+						   contador = contador + 1;	
+						   newCont <= 0;
+					   end
+					   contador1 = 30'd0;
+					end
+					6: begin
+					   Notas <= 8'b01000000; // SI
+					   if( newCont < 3) begin
+							newCont <= newCont + 1;
+							#2 Notas <= 8'b00000000;
+							contador = 6;
+					   end
+					   else begin
+							contador = contador + 1;
+							newCont <= 0;
+					   end
+					   contador1 = 30'd0;
+					end
+					7: begin
+					   Notas <= 8'b00100000; // LA
+					   contador = contador + 1;
+					   contador1 = 30'd0;
+					end
+					8:begin
+					   Notas <= 8'b01000000; // SI
+					   contador = contador + 1;
+					   contador1 = 30'd0;
+					end
+					9:begin
+					   Notas <= 8'b00100000; // LA
+					   contador = contador + 1;
+					   contador1 = 30'd0;
+					end
+					10:begin
+					   Notas <= 8'b01000000; // SI
+					   contador = contador + 1;
+					   contador1 = 30'd0;
+					end
+					11:begin
+					   Notas <= 8'b00100000; // LA
+					   contador = contador + 1;
+					   contador1 = 30'd0;
+					end
+					12: begin
+					   Notas <= 8'b00000010; // RE
+					   contador = contador + 1;
+					   contador1 = 30'd0;
+					end
+					// Verso 2:
+					13: begin
+					   Notas <= 8'b01000000; // SI
+					   if( newCont < 7) begin
+							newCont <= newCont + 1;
+							#2 Notas <= 8'b00000000;
+							contador = 13;
+					   end
+					   else begin
+							contador = contador + 1;
+							newCont <= 0;
+					   end
+					   contador1 = 30'd0;
+					end
+					14: begin
+						Notas <= 8'b00010000; // SOL
+					    contador = contador + 1;
+					    contador1 = 30'd0;
+					end
+					13: begin
+						Notas <= 8'b00100000; // LA
+					    contador = contador + 1;
+					    contador1 = 30'd0;
+					end
+					14:begin
+					   Notas <= 8'b01000000; // SI
+					   contador = contador + 1;
+					   contador1 = 30'd0;
+					end
+					15: begin
+					   Notas <= 8'b10000000; // DO1
+					   if(newCont < 3) begin
+						   newCont <= newCont + 1;
+						   #2 Notas <= 8'b00000000;
+						   contador = 15;
+					   end
+					   else begin
+						   contador = contador + 1;	
+						   newCont <= 0;
+					   end
+					   contador1 = 30'd0;
+					end
+					16: begin
+					   Notas <= 8'b01000000; // SI
+					   if( newCont < 4) begin
+							newCont <= newCont + 1;
+							#2 Notas <= 8'b00000000;
+							contador = 16;
+					   end
+					   else begin
+							contador = contador + 1;
+							newCont <= 0;
+					   end
+					   contador1 = 30'd0;
+					end
+					17: begin
+					   Notas <= 8'b00000010; // RE
+					   if( newCont < 2) begin
+							newCont <= newCont + 1;
+							#2 Notas <= 8'b00000000;
+							contador = 17;
+					   end
+					   else begin
+							contador = contador + 1;
+							newCont <= 0;
+					   end
+					   contador1 = 30'd0;
+					end
+					18: begin
+					   Notas <= 8'b00000001; // SI
+					   contador = contador + 1;
+					   contador1 = 30'd0;
+					end
+					19: begin
+						Notas <= 8'b00100000; // LA
+					    contador = contador + 1;
+					    contador1 = 30'd0;
+					end
+					20: begin
+						Notas <= 8'b00010000; // SOL
+					    contador = contador + 1;
+					    contador1 = 30'd0;
+					end
+					// Verso 3:
+					21: begin
+						Notas <= 8'b00000010; // RE
+						contador = contador + 1;
+						contador1 = 30'd0;
+					end
+					22: begin
+						Notas <= 8'b00000001; // SI
+					    contador = contador + 1;
+					    contador1 = 30'd0;
+					end
+					23: begin
+						Notas <= 8'b00100000; // LA
+					    contador = contador + 1;
+					    contador1 = 30'd0;
+					end
+					24: begin
+						Notas <= 8'b00010000; // SOL
+						if(newCont2 < 1)
+							contador = 25;
+						else begin
+							contador = 26;
+							newCont2 = 0;
+						end
+						newCont2 = newCont2 + 1;	
+					    contador1 = 30'd0;
+					end
+					25: begin
+						Notas <= 8'b00000010; // RE
+						if(newCont < 2) begin
+							contador = 25;
+							newCont = newCont + 1;
+							#2 Notas <= 8'b00000000;
+						end
+						else
+							contador = 21;
+						contador1 = 30'd0;
+					end
+					26: begin
+					   Notas <= 8'b00000100; // MI
+					   if(newCont < 3) begin
+							contador = 26;
+							newCont = newCont + 1;
+							#2 Notas <= 8'b00000000;
+						end
+						else
+							contador = 27;
+						contador1 = 30'd0;
+					end
+					27: begin
+						Notas <= 8'b00000001; // DO
+						contador = contador + 1;
+						contador1 = 30'd0;
+					   
+					end
+					28: begin
+						Notas <= 8'b0100000; // SI
+						contador = contador + 1;
+						contador1 = 30'd0;
+					end
+					29:begin
+						Notas <= 8'b00100000; // LA
+						contador = contador + 1;
+						contador1 = 30'd0;
+					end
+					30: begin
+						Notas <= 8'b00000010; // RE
+						if(newCont < 3) begin
+							contador = 30;
+							newCont = newCont + 1;
+							#2 Notas <= 8'b00000000;
+						end
+						else
+							contador = 21;
+						contador1 = 30'd0;
+					end
+					31: begin
+						Notas <= 8'b00000100; // MI
+						contador = contador + 1;
+						contador1 = 30'd0;
+					end
+					32: begin
+						Notas <= 8'b00000010; // RE
+						contador = contador + 1;
+						contador1 = 30'd0;
+					end
+					33: begin
+						Notas <= 8'b00100000; // LA
+						contador = contador + 1;
+						contador1 = 30'd0;
+					end
+					34: begin
+						Notas <= 8'b00000001; // DO
+						contador = contador + 1;
+						contador1 = 30'd0;   
+					end
+					35: begin
+						Notas <= 8'b00000001; // SI
+					    contador = contador + 1;
+					    contador1 = 30'd0;
+					end
+					// Verso 4:
+					35: begin
+					   Notas <= 8'b00000010; // RE
+					   contador = contador + 1;
+					   contador1 = 30'd0;
+					end
+					36: begin
+					   Notas <= 8'b00000001; // SI
+					   contador = contador + 1;
+					   contador1 = 30'd0;
+					end
+					37: begin
+						Notas <= 8'b00100000; // LA
+					    contador = contador + 1;
+					    contador1 = 30'd0;
+					end
+					38: begin
+						Notas <= 8'b00010000; // SOL
+					    if(newCont2 < 1)
+							contador = 39;
+						else
+							contador = 40;
+					    newCont2 = newCont2 + 1;
+					    contador1 = 30'd0;
+					end
+					39: begin
+					   Notas <= 8'b00000010; // RE
+					   if( newCont < 2) begin
+							newCont <= newCont + 1;
+							#2 Notas <= 8'b00000000;
+							contador = 13;
+					   end
+					   else begin
+							contador = contador + 1;
+							newCont <= 0;
+					   end
+					   contador1 = 30'd0;
+					end
+					40: begin
+					   Notas <= 8'b00000100; // MI
+					   if(newCont < 2) begin
+							contador = 40;
+							newCont = newCont + 1;
+							#2 Notas <= 8'b00000000;
+						end
+						else
+							contador = contador + 1;
+						contador1 = 30'd0;
+					end
+					41: begin
+						Notas <= 8'b00000100; // MI
+						contador = contador + 1;
+						contador1 = 30'd0;
+					end
+					42: begin
+						Notas <= 8'b00000001; // DO
+						contador = contador + 1;
+						contador1 = 30'd0;				   
+					end
+					43: begin
+					   Notas <= 8'b01000000; // SI
+					   contador = contador + 1;
+					   contador1 = 30'd0;
+					end
+					44: begin
+						Notas <= 8'b00100000; // LA
+					    contador = contador + 1;
+					    contador1 = 30'd0;
+					end
+					45: begin
+					   Notas <= 8'b00000010; // RE
+					   if( newCont < 3) begin
+							newCont <= newCont + 1;
+							#2 Notas <= 8'b00000000;
+							contador = 13;
+					   end
+					   else begin
+							contador = contador + 1;
+							newCont <= 0;
+					   end
+					   contador1 = 30'd0;
+					end
+					46: begin
+						Notas <= 8'b00000100; // MI
+						contador = contador + 1;
+						contador1 = 30'd0;
+					end
+					47: begin
+						Notas <= 8'b00000010; // RE
+						contador = contador + 1;
+						contador1 = 30'd0;
+					end
+					48: begin
+						Notas <= 8'b00100000; // LA
+						contador = contador + 1;
+						contador1 = 30'd0;
+					end
+					49: begin
+					   Notas <= 8'b01000000; // SI
+					   if( newCont < 2) begin
+							newCont <= newCont + 1;
+							#2 Notas <= 8'b00000000;
+							contador = 16;
+					   end
+					   else begin
+							contador = contador + 1;
+							newCont <= 0;
+					   end
+					   contador1 = 30'd0;
+					end
+					50: begin
+						Notas <= 8'b00000100; // MI
+						contador = contador + 1;
+						contador1 = 30'd0;
+					end
+					51: begin
+						Notas <= 8'b00000010; // RE
+						contador = contador + 1;
+						contador1 = 30'd0;
+					end
+					52: begin
+						Notas <= 8'b00000001; // DO
+						contador = contador + 1;
+						contador1 = 30'd0;
+					end
+					53: begin
+						Notas <= 8'b00100000; // LA
+						contador = contador + 1;
+						contador1 = 30'd0;
+					end
+					54: begin
+						Notas <= 8'b00010000; // SOL
+						contador = 0;
+						contador1 = 30'd0;
+					end			
+			endcase
+		end
+			if(SW[15]) begin //	Brilha Brilha Estrelinha:
 				case(contador)
 					0: begin
 						Notas <= 8'b00000001; // DO
@@ -205,10 +618,11 @@ module piano(CLOCK_50, CLOCK_27, KEY, SW, I2C_SDAT, I2C_SCLK, AUD_ADCDAT, AUD_DA
 						Notas <= 8'b00000000;
 					end
 				endcase
-			end
-		end
-		else 
+			end 
+		else begin
 			contador1 = contador1 + 1;
+		end
+	end
 	end
 	
 	always @(posedge AUD_BCLK or negedge Reset) begin
@@ -216,8 +630,9 @@ module piano(CLOCK_50, CLOCK_27, KEY, SW, I2C_SDAT, I2C_SCLK, AUD_ADCDAT, AUD_DA
 			count12 = 12'h000;
 		else begin
 			if(Octave == 8'b00000001) begin
-				if(count12 == DO)
+				if(count12 == DO)begin
 					count12 = 12'h00;
+				end
 				else
 					count12 = count12 + 1;
 			end
